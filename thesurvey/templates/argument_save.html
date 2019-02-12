@@ -1,0 +1,167 @@
+
+
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3 >Use these form for feed the arguments and statements database</h3>
+    <p>Note:These will be visible just for admins role of the system</p>
+
+
+<!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+<div class="bootstrap-iso">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-md-6 col-sm-6 col-xs-12">
+    <form method="post">
+     <div class="form-group ">
+      <label class="control-label " for="issue">
+       Issue
+      </label>
+      <input class="form-control" id="issue" name="issue" type="text"/>
+      <span class="help-block" id="hint_issue">
+       The problem or controversy under discussion
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="claim_title">
+       Claim title
+      </label>
+      <input class="form-control" id="claim_title" name="claim_title" type="text"/>
+      <span class="help-block" id="hint_claim_title">
+       The point of the argument
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="argument">
+       Argument
+      </label>
+      <textarea class="form-control" cols="40" id="argument" name="argument" rows="10"></textarea>
+      <span class="help-block" id="hint_argument">
+       Provide full statements argument
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="support">
+       Select type of support
+      </label>
+      <select class="select form-control" id="support" name="support">
+       <option value="Positive">
+        Positive
+       </option>
+       <option value="Negative">
+        Negative
+       </option>
+       <option value="Neutral">
+        Neutral
+       </option>
+      </select>
+      <span class="help-block" id="hint_support">
+       Statement relationship
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="refutation">
+       Refutation
+      </label>
+      <textarea class="form-control" cols="40" id="refutation" name="refutation" rows="10"></textarea>
+      <span class="help-block" id="hint_refutation">
+       Opposing viewpoints, arguments, statements that can discredit the argument
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="evidence">
+       Evidence
+      </label>
+      <textarea class="form-control" cols="40" id="evidence" name="evidence" rows="10"></textarea>
+      <span class="help-block" id="hint_evidence">
+       The facts, why the claim is valid
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="reasons">
+       Reasons
+      </label>
+      <textarea class="form-control" cols="40" id="reasons" name="reasons" rows="10"></textarea>
+      <span class="help-block" id="hint_reasons">
+       Evidence support, links, etc
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="emotional_appeals">
+       Emotional appeals
+      </label>
+      <textarea class="form-control" cols="40" id="emotional_appeals" name="emotional_appeals" rows="10"></textarea>
+      <span class="help-block" id="hint_emotional_appeals">
+       Targeted toward needs or values that users are likely to care about
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="linguistic_technique">
+       Language technique
+      </label>
+      <input class="form-control" id="linguistic_technique" name="linguistic_technique" type="text"/>
+      <span class="help-block" id="hint_linguistic_technique">
+       Linguistic technique
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label ">
+       Relevance of the argument
+      </label>
+      <div class="">
+       <div class="radio">
+        <label class="radio">
+         <input name="strength" type="radio" value="Very credible"/>
+         Very credible
+        </label>
+       </div>
+       <div class="radio">
+        <label class="radio">
+         <input name="strength" type="radio" value="Credible"/>
+         Credible
+        </label>
+       </div>
+       <div class="radio">
+        <label class="radio">
+         <input name="strength" type="radio" value="Somehow credible "/>
+         Somehow credible
+        </label>
+       </div>
+       <div class="radio">
+        <label class="radio">
+         <input name="strength" type="radio" value="No credible"/>
+         No credible
+        </label>
+       </div>
+       <div class="radio">
+        <label class="radio">
+         <input name="strength" type="radio" value="Nonsense"/>
+         Nonsense
+        </label>
+       </div>
+       <span class="help-block" id="hint_strength">
+        Rate the value of the statement and how credible or believable it could be
+       </span>
+      </div>
+     </div>
+     <div class="form-group">
+      <div>
+       <button class="btn btn-primary " name="submit" type="submit">
+        Submit
+       </button>
+      </div>
+     </div>
+    </form>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+{% endblock %}

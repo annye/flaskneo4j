@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+
+<div class="jumbotron">
+  
+    <style>
+        .jumbotron { 
+          background-color:#262626; /* Orange */
+          color: #ffffff;
+        }
+       
+  
+    </style>
+    <body>
+    
+      <center>
+      <strong>
+        <h1>
+         
+     
+
+    <h1 id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()">Welcome</h1>
+
+
+<script>
+function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+  document.getElementById("demo").style.color = "black";
+}
+</script>
+
+</body>
+    <script>
+    function mouseOver() {
+      document.getElementById("demo").style.color = "blue";
+    }
+    
+    function mouseOut() {
+      document.getElementById("demo").style.color = "White";
+    }
+    </script>
+    
+    </body>
+
+    <Strong><h3>We want to know about you</h3></Strong>
+<p>Take the survey and be part of our experiment please follow the instructions</p>
+
+
+    </body>
+    <hr class="my-4">
+   
+  
+  
+    <p class="lead">
+      
+    </p>
+  </div>
+
+{% endblock %}
