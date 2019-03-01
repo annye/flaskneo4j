@@ -1,0 +1,19 @@
+
+
+    {% for row in posts %}
+      <li>
+          <b>{{ row.n.major_premise }}</b>
+          {% if request.path == "/" %}
+    	by <a href="{{ url_for('profile', username=row.n.username) }}">{{ row.username }}</a>
+        {% endif %}
+    	
+        
+        
+          <a href="{{ url_for('like_argument', argument_id=row.n.id) }}">Agree</a>
+        
+      
+ 
+
+    {% endfor %}
+      </li>
+  

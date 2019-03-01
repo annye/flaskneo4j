@@ -1,0 +1,738 @@
+
+
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+{% if session.username %}
+<div class="wrap">
+    <h1 class="likert-header">This is a personality quiz</h1>
+<form action="{{ url_for('add_personality') }}" method="post">
+  
+    
+          <label class="statement">I have excellent ideas.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p1" value="strong_agree" required>
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p1" value="agree" required>
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p1" value="neutral" required>
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p1" value="disagree" required>
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p1" value="strong_disagree" required>
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+          <label class="statement">I am quick to understand things.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p2" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p2" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p2" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p2" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p2" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+          <label class="statement">I am not interested in abstractions.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p5" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p5" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p5" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p5" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p5" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+          <label class="statement">I always am prepared.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p8" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p8" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p8" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p8" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p8" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I get chores done right away.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p10" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p10" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p10" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p10" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p10" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I follow a schedule</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p12" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p12" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p12" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p12" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p12" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+            </ul>
+            <label class="statement">I often forget to put things back in their proper place.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p16" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p16" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p16" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p16" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p16" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I am the life of the party.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p18" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p18" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p18" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p18" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p18" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I dont't mind being the center of attention.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p19" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p19" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p19" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p19" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p19" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I feel comfortable around people.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p20" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p20" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p20" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p20" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p20" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I think a lot before I speak or act.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p24" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p24" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p24" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p24" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p24" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I have not intention of talking in large crowds.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p27" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p27" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p27" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p27" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p27" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I get irritated easily.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p28" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p28" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p28" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p28" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p28" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I get stressed out easily.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p29" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p29" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p29" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p29" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p29" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I get upset easily.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p30" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p30" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p30" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p30" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p30" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I have frecuent mood swings.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p31" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p31" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p31" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p31" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p31" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I worry about things.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p32" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p32" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p32" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p32" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p32" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I am much more anxious than most people.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p33" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p33" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p33" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p33" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p33" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I am relaxed most of the time.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p34" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p34" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p34" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p34" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p34" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I am interested in people.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p36" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p36" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p36" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p36" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p36" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I sympathize with other's feelings.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p37" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p37" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p37" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p37" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p37" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I take time out for others.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p39" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p39" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p39" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p39" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p39" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I feel other's emotions.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p40" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p40" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p40" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p40" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p40" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I am not really interested in others.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p42" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p42" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p42" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p42" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p42" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I am not interested in other's people problems.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p44" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p44" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p44" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p44" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p44" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I wouldn't use flattery to get a raise or promotion at work, even if I tought it would succeed.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p46" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p46" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p46" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p46" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p46" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">Having a lot of money is not especially important to me.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p47" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p47" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p47" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p47" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p47" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">If I want something from someone, I will laugh at that person's worst jokes.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p48" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p48" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p48" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p48" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p48" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I would never accept a bribe, even if it were very large.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p49" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p49" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p49" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p49" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p49" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">Iwant people to know I am an important person of high status.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p50" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p50" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p50" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p50" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p50" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+            <label class="statement">I wouldn’t pretend to like someone just to get that person to do favors for me.</label>
+          <ul class='likert'>
+            <li>
+              <input type="radio" name="p51" value="strong_agree">
+              <label>Strongly agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p51" value="strong_agree">
+              <label>Agree</label>
+            </li>
+            <li>
+              <input type="radio" name="p51" value="strong_agree">
+              <label>Neutral</label>
+            </li>
+            <li>
+              <input type="radio" name="p51" value="disagree">
+              <label>Disagree</label>
+            </li>
+            <li>
+              <input type="radio" name="p51" value="strong_agree">
+              <label>Strongly disagree</label>
+            </li>
+          </ul>
+          <div class="buttons">
+            <button class="clear">Clear</button>
+            <button class="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      {% endif %}
+ 
+
+
+ {%endblock%}

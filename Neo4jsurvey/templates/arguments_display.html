@@ -1,0 +1,15 @@
+
+
+    {% for row in posts %}
+  
+        {% if request.path == "/" %}
+      by <a href="{{ url_for('profile', username=row.n.username) }}">{{ row.username }}</a>
+      {% endif %}
+      
+        <a href="{{ url_for('add_ratings', argument_id=row.n.id) }}"> </a>
+      
+    
+
+
+  {% endfor %}
+  

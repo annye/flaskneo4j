@@ -1,0 +1,165 @@
+
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body></body>
+
+<div class="row">
+  <div class="column" style="background-color:#aaaa;">
+ {% if session.username %}
+
+ <form action="{{ url_for('add_post') }}" method="post"></form>
+  
+  
+  
+<strong>I was born:</strong>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female">Female<br>
+              
+<strong><I am:</strong><br>   
+                <input type="radio",name="sexuality",  value="Heterosexual" >Heterosexual<br>
+                <input type="radio" name="sexuality"value="Homosexual">Homosexual<br>
+                <input type="radio" name="sexuality" value="Bisexual">Bisexual<br>
+                <input type="radio" name="sexuality" value="Transsexual">Transexual<br>
+                <input type="radio" name="sexuality" value="Pansexual">Pansexual<br>
+            <br>
+    <hr>
+   
+<strong>My approximate age:</strong>
+                 <select name="age">
+                 <option value="input">----Select----</option>
+                 <option value="15-20">15-20</option>
+                 <option value="20-25">20-25</option>
+                 <option value="25-30">25-30</option>
+                 <option value="30-35">30-35</option>
+                 <option value="35-40">35-40</option>
+                 <option value="40-45">40-45</option>
+                 <option value="45-50">45-50</option>
+                 <option value="50-60">50-60</option>
+                 <option value="60-70">60-70</option>
+                 <option value="75">70+</option>
+                 </select>
+                     
+                   
+    <strong>My ethnicity:</strong>
+             <select name="ethnicity">
+                   
+                 <option value="input">----Select----</option>
+                 <option value="Caucasian or White">Caucasian or White</option>
+                 <option value="Black or African">Black or African</option>
+                 <option value="Asian">Asian</option>
+                 <option value="Indian">Indian</option>
+                 <option value="Multiracial">Multiracial</option>
+                 <option value="Hispanic or Latin">Hispanic or Latin</option>
+                 <option value="Other">Other</option>
+            </select>
+            <strong>My marital status:</strong>
+      
+            <select name="marital_status">
+             <option value="input">----Select----</option>
+             <option value="Single">Single</option>
+             <option value="Living with a partner">Living with a partner</option>
+             <option value="Married">Married</option>
+             <option value="Widowed">Widowed</option>
+           </select>
+           <strong>My Ocuppation:</strong>
+           <select name="occupation">
+            <option value="input">----Select----</option>
+            <option value="Part-time student">Part-time student</option>
+            <option value="Full-time student">Full-time student</option>
+            <option value="Work and study">Work and study</option>
+            <option value="Full-time work">Full-time work</option>
+            </select>
+            
+            
+    <hr>
+
+<div class="row">
+    <div class="column" style="background-color:#aaaa;">
+    
+    
+            <dt>What was the last grade you completed in school?</dt>    
+            <input type="radio" name="education" value="No Schooling Completed"> No Schooling Completed<br>
+            <input type="radio" name="education" value="Less than High School"> Less than High Schoole<br>
+            <input type="radio" name="education" value="High school"> High school<br>
+            <input type="radio" name="education" value="Some college"> Some college<br>
+           <input type="radio" name="education" value="Bachelor’s Degree"> Bachelor’s Degree<br>
+          <input type="radio" name="education" value="Master's Degree"> Master's Degree<br>
+           <input type="radio" name="education" value="Doctorate Degree"> Doctorate Degree
+        
+          <hr>
+          <dt><strong>which vehicle type do you have? Select all that apply:</strong></dt> 
+        
+            
+          <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+           <input type="checkbox" name="vehicle" value="Car"> I have a car<br>
+           <hr>
+        </div>
+    <br>
+
+       
+    <div class="column" style="background-color:#aaaa;">
+     <strong>Indicate activities/interest which you enjoy on a regular basics:</strong>
+      <input type="checkbox" name="activities" value="Make money" > Money making opportunities<br>
+      <input type="checkbox" name="activities" value="Charities/volunteer work"> I like vist Charities shops or do voluntary work<br>
+      <input type="checkbox" name="activities" value="Go to cinema"> I like to go to cinema<br>
+      <input type="checkbox" name="activities" value="travel"> I like to travel<br>
+      <input type="checkbox" name="activities" value="vitamins"> I like to buy vitamins and supplementsbr>
+     <input type="checkbox" name="activities" value="music"> I like Music,festivals, concerts and live videos  <br>
+     <input type="checkbox" name="activities" value="religion"> I enjoy Bible/devotional reading and  religion events <br>
+     <input type="checkbox" name="activities" value="Book reading"> I like to read books<br>
+      <hr>
+
+    
+    <strong>In what area of your life would you like to increase your feelings of happiness? Select all that apply:</strong>
+        
+            
+    <input type="checkbox" name="desired" value="friends">I would like to have more friends or spend more time with them<br>
+    <input type="checkbox" name="desired" value="romance"> I would like to have a romatic relationship or to improve my current one<br>
+    <input type="checkbox" name="desired" value="family">I would like to spend more time with my family<br>
+    <input type="checkbox" name="desired" value="healt-wealth"> Health and Wealth<br>
+    
+    <br>
+    </div>
+    <input type="submit" value="SAVE">
+    <div class="alert alert-warning"
+     <strong>Please save the survey  .
+          </div>
+         
+  
+        </body>
+     
+  
+    
+      </form>
+{% endif %}
+     
+
+    {% endblock %}
+
+
+       

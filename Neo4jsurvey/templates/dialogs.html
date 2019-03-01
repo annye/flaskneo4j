@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Listen to the following conversation about holidays destinations</h2>
+
+<div>
+    <div class="row">
+    <div class="col-md-6" style="background-color:#aaa;">
+ <label >Side A</label>
+
+    </div>
+    <div class="col-md-6" style="background-color:#bbb;">
+        <label >Side B</label>
+    </div>
+    </div>
+    <br />
+        {% for row in posts %}
+        <div class="row">
+          <div class="col-md-6">
+              <div style="border: 3px solid blue; padding: 5px;">
+                  <label><b>{{ row.n.argu}}</b>
+                    {% with var1=row.n.id %}
+                    {% include "five_stars_Macro.html" %}
+                    {% endwith %}
+                  </label>
+                  
+                </div>
+              </div>
+              <div class="col-md-6">
+              &nbsp;
+              </div>
+      </div>
+     
+      <div class="row"> 
+              <div class="col-md-6">
+          
+              &nbsp;
+          
+              </div>
+            
+              <div class="col-md-6">
+                  <div style="border: 3px solid khaki; padding: 5px;">
+                     
+                      <label >{{ row.n.argu }} {% include "five_stars_Macro.html" %}</label>
+                  </div>
+              </div>
+      </div>
+      {% endfor %}
+      <br/> 
+      <hr />
+      <br />
+  
+   
+                
+                
+                
+               
+ <a href="{{ url_for('dialogs')}}"></a>
+              
+   
+    
+<div class="row">
+  <div class="col-md-4">
+      <h2>Summary  discussion</h2>
+      {% include "display_posts.html" %}
+            
+         
+    
+
+      <p>
+            Please click the button and give us your opinion .
+        </p>
+        <p><a class="btn btn-default" href="{{ url_for('postquestions') }}">Learn more &raquo;</a></p>
+    </div>
+  </div>            
+              
+  
+
+
+
+
+{% endblock%}

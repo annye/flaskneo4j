@@ -1,0 +1,797 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="wrap">
+    <h3 class="likert-header">We would like to know a bit more about you, please answer the following questions:</h3>
+    <form action="{{ url_for('add_values') }}" method="post">
+       
+      <label class="statement">Financial security is very important to me.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v1" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v1" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v1" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v1" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v1" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+      <label class="statement">I believe that "industrial growth" should be limited.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v2" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v2" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v2" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v2" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v2" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+      <label class="statement">A woman's life is fulfilled only if she can provide a happy home for her family..</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v3" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v3" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v3" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v3" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v3" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+      <label class="statement">My social status is an important part of my life.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v4" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v4" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v4" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v4" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v4" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">I do whatever I feel like doing, and I don’t care what others think — or even if it’s illegal.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v5" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v5" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v5" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v5" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v5" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">Brand is an important factor in my purchase decision making.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v6" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v6" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v6" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v6" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v6" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement"> I do what I want, when I want, the moment the impulse strikes me, regardless of what others want.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v7" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v7" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v7" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v7" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v7" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">Do you frequently watch action movies with many explosions?</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v8" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v8" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v8" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v8" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v8" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">Every person for themselves; I don’t see the point in feeling sorry for other people and have no desire to help other</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v9" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v9" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v9" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v9" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v9" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">Hanging, electrocution or gas chamber are suitable method for the death penalty..</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v33" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v33" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v33" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v33" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v33" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">It is okay to sentence convicted individuals with mental illness to the death penalty.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v10" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v10" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v10" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v10" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v10" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">There is too much violence on television.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v11" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v11" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v11" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v11" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v11" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">I view the future with optimism.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v12" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v12" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v12" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v12" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v12" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">I will be able to overcome all problems with God's help.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v13" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v13" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v13" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v13" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v13" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">I believe in further existence after death.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v14" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v14" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v14" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v14" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v14" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">All hope ends with death.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v15" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v15" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v15" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v15" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v15" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">How important to you is the practice of your belief (e.g. private meditation, religious services) in your to day life?</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v16" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v16" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v16" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v16" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v16" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">Alternative medicine based on plants are more effective than taking drugs given by the medical doctor.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v17" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v17" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v17" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v17" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v17" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">I believe that Alternative Medicine builds up the body’s own defenses and promotes self-healing</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v18" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v18" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v18" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v18" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v18" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">The possession, use, and sale of small amounts of marijuana should be legal.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v19" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v19" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v19" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v19" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v19" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">Government should not censor radio, television, the print media, or the Internet.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v20" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v20" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v20" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v20" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v20" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">Local, state, and federal governments should each be free to impose any restrictions on homosexuality that the majority of voters support.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v21" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v21" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v21" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v21" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v21" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">We have too many limits on legal immigration and are turning away too many qualified applicants.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v22" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v22" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v22" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v22" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v22" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">We should impose greater limits on legal immigration into this country..</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v23" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v23" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v23" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v23" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v23" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">“Live in the moment” is what I say; the future will take care of itself and learning from your past is pointless.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v25" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v25" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v25" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v25" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v25" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">Access to a legal abortion should be available to any female.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v24" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v24" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v24" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v24" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v24" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+         <label class="statement">Do you think terrorist have kindness in them?</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v26" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v26" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v26" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v26" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v26" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+         <label class="statement">Can you picture yourself killing a famous political or religious leader?</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v27" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v27" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v27" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v27" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v27" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+         <label class="statement">Complementary therapies are a threat to public health.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v28" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v28" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v28" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v28" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v28" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+         <label class="statement">Effects of complementary therapies are usually the result of a placebo effect..</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v29" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v29" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v29" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v29" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v29" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+         <label class="statement">Treatments not tested in a scientifically recognized manner should be discouraged.
+          </label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v30" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v30" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v30" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v30" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v30" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+        <label class="statement">Do you agree with male circumcision?</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v31" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v31" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v31" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v31" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v31" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+      <label class="statement">Do you agree with female circumcision or genital mutilation (FGM)?</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="v32" value="strong_agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v32" value="strong_agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="v32" value="strong_agree">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="v32" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="v32" value="strong_agree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
+    
+
+        
+      <div class="buttons">
+        <button class="clear">Clear</button>
+        <button class="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%endblock%}

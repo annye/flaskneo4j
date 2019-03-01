@@ -1,0 +1,246 @@
+
+
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3 >Use these form for feed the arguments and statements database</h3>
+    <p>Note:These will be visible just for admins role of the system</p>
+
+
+<!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+<div class="bootstrap-iso">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-md-6 col-sm-6 col-xs-12">
+    <form action="{{ url_for('add_argument') }}" method="post">
+        <div class="form-group ">
+            <label class="control-label " for="side">
+             Agent
+            </label>
+            <select class="select form-control" id="side" name="side">
+             <option value="SideA">
+              SideA
+             </option>
+             <option value="SideB">
+              SideB
+             </option>
+             <option value="SideC">
+              SideC
+             </option>
+            </select>
+            <span class="help-block" id="hint_side">
+             Refers to the agent name or side
+            </span>
+           </div>
+
+     <div class="form-group ">
+      <label class="control-label " for="issue">
+       Issue tittle
+      </label>
+      <input class="form-control" id="issue" name="issue" type="text"/>
+      <span class="help-block" id="hint_issue">
+       The title of topic under study
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="type_schema">
+       Select schema type
+      </label>
+      <select class="select form-control" id="type_schema" name="type_schema">
+       <option value="Analogy (AN)">
+        Analogy (AN)
+       </option>
+       <option value="CauseToEffect (CE)">
+        CauseToEffect (CE)
+       </option>
+       <option value="PracticalReasoning (PR)">
+        PracticalReasoning (PR)
+       </option>
+       <option value="VerbalClassification (VC)">
+        VerbalClassification (VC)
+       </option>
+      </select>
+      <span class="help-block" id="hint_type_schema">
+       Follows the Walton&rsquo;s most common 
+argumentation schemes
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="premise_type">
+       Premise type
+      </label>
+      <select class="select form-control" id="premise_type" name="premise_type">
+       <option value="SimilarityOfCases (AN)">
+        SimilarityOfCases (AN)
+       </option>
+       <option value="Precedent (AN)">
+        Precedent (AN)
+       </option>
+       <option value="Casual (CE)">
+        Casual (CE)
+       </option>
+       <option value="Occurrence (CE)">
+        Occurrence (CE)
+       </option>
+       <option value="Goal (PR)">
+        Goal (PR)
+       </option>
+       <option value="GoalPlan (PR)">
+        GoalPlan (PR)
+       </option>
+       <option value="Precedent (VC)">
+        Precedent (VC)
+       </option>
+       <option value="ClassificationProperty (VC)">
+        ClassificationProperty (VC)
+       </option>
+      </select>
+      <span class="help-block" id="hint_premise_type">
+       Defines the granularity of the schema
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="argu">
+       The argument
+      </label>
+      <textarea class="form-control" cols="40" id="argu" name="argu" rows="10"></textarea>
+      <span class="help-block" id="hint_textarea">
+       Type full  text argument
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="major_premise">
+       The Major premise
+      </label>
+      <input class="form-control" id="major_premise" name="major_premise" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="minor_premise">
+       The Minor premise
+      </label>
+      <textarea class="form-control" cols="40" id="minor_premise" name="minor_premise" rows="10"></textarea>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="conclusion">
+       The conclusion
+      </label>
+      <textarea class="form-control" cols="40" id="conclusion" name="conclusion" rows="10"></textarea>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="type_dialog">
+       Type of dialog
+      </label>
+      <select class="select form-control" id="type_dialog" name="type_dialog">
+       <option value="Persuasion">
+        Persuasion
+       </option>
+       <option value="Inquiry">
+        Inquiry
+       </option>
+       <option value="Negotiation">
+        Negotiation
+       </option>
+       <option value="Information-seeking">
+        Information-seeking
+       </option>
+       <option value="Deliveration">
+        Deliveration
+       </option>
+       <option selected="selected" value="">
+       </option>
+      </select>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="influence_social">
+       Influence technique
+      </label>
+      <select class="select form-control" id="influence_social" name="influence_social">
+       <option value="Contrast">
+        Contrast
+       </option>
+       <option value="Reciprocity">
+        Reciprocity
+       </option>
+       <option value="Consistency">
+        Consistency
+       </option>
+       <option value="Social Proof">
+        Social Proof
+       </option>
+       <option value="Linking">
+        Linking
+       </option>
+       <option value="Authority">
+        Authority
+       </option>
+       <option value="Scarcity">
+        Scarcity
+       </option>
+       <option selected="selected" value="">
+       </option>
+      </select>
+      <span class="help-block" id="hint_influence_social">
+       Social influence technique to  use
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="support">
+       Argument support
+      </label>
+      <select class="select form-control" id="support" name="support">
+       <option value="Positive">
+        Positive
+       </option>
+       <option value="Neutral">
+        Neutral
+       </option>
+       <option value="Negative">
+        Negative
+       </option>
+       <option selected="selected" value="">
+       </option>
+      </select>
+      <span class="help-block" id="hint_support">
+       Describe the relationship of topic
+      </span>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="source">
+       Source of the argument
+      </label>
+      <select class="select form-control" id="source" name="source">
+       <option value=" Expert  Opinion">
+        Expert  Opinion
+       </option>
+       <option value="Evidence_based">
+        Evidence_based
+       </option>
+       <option value="Personal">
+        Personal
+       </option>
+       <option value="Fallacie">
+        Fallacie
+       </option>
+       <option value="Other">
+        Other
+       </option>
+      </select>
+     </div>
+     <div class="form-group">
+      <div>
+       <button class="btn btn-primary " name="submit" type="submit">
+        Submit
+       </button>
+      </div>
+     </div>
+    </form>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+{% endblock %}
