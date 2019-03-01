@@ -1,0 +1,53 @@
+
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+
+
+
+
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+<div class="bootstrap-iso">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-md-6 col-sm-6 col-xs-12">
+    <form method="post">
+     <div class="form-group ">
+         <h2>Registration</h2>
+      <label class="control-label " for="username">
+       Your nickname
+      </label>
+      <input class="form-control" id="username" name="username" type="text"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="password">
+       Your password
+      </label>
+      <input class="form-control" id="password" name="password" type="text"/>
+     </div>
+     
+      <div>
+       <button class="btn btn-primary " name="submit" type="submit">
+        Submit
+       </button>
+      </div>
+     </div>
+    </form>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+
+
+
+
+{%endblock%}

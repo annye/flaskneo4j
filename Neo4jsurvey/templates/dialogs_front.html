@@ -1,0 +1,76 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+<div class="jumbotron">
+  
+        
+    <a href="#"><h3> We are investigating how humans debate, evaluate and draw conclusions.</h3></a>
+    <p>Please select topic of interest and follow the instructions</p>
+   
+     
+
+</div>
+
+
+<!-- Section: Features v.3 -->
+<section class="my-5">
+
+       
+        <!-- Grid row -->
+        <div class="row">
+      
+          <!-- Grid column -->
+          <div class="col-lg-5 text-center text-lg-left">
+            <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/screens-section.jpg" alt="Sample image">
+          </div>
+          <!-- Grid column -->
+      
+          <!-- Grid column -->
+          <div class="col-lg-7">
+      
+            <!-- Grid row -->
+            <div class="row mb-3">
+      
+              <!-- Grid column -->
+              <div class="col-1">
+                <i class="fa fa-mail-forward fa-lg indigo-text"></i>
+              </div>
+              <!-- Grid column -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-md-4">
+        <h2>Holiday in the Mediterrean</h2>
+        <p>
+        Listen to the following discussion between two people A and B deciding the next holiday destination for a week. A (pro-Malta) and B (pro-Crete), They are trying to convince you to chose one or the other destination. A is suggesting Malta, while B is suggesting Crete. They will now discuss in front of you proposing their arguments in support of each destination"  
+        <p><a class="btn btn-default" href="{{ url_for('dialogs') }}">Learn more &raquo;</a></p>
+  
+    </div>
+    <div class="col-md-4">
+        <h2>Buying a car </h2>
+        <p>"A and B are discussing about which type of car to chose, either SUV or Minivan.</p>
+        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Country and Quality of Life</h2>
+        <p>A and B are discussing if Scandinavia is the place with the highest quality of life.</p>
+        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+{% endblock %}

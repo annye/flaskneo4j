@@ -1,0 +1,29 @@
+
+<script type="text/javascript">
+function showSomething(user_selected_value) {
+        // var user_rating = document.getElementsByName("form_5star_macro")[0].r1.value;
+        console.log(JSON.stringify(user_selected_value));
+        // alert(user_rating);
+        $.post("{{ url_for('add_ratings') }}", {'rating_value': user_selected_value})
+}
+</script>
+
+<!-- <form action="{{ url_for('add_ratings') }}" method="post" name="form_5star_macro"> -->
+
+<link rel="stylesheet" type="text/css" href="/static/content/stars.css" />
+<ul class="stars">
+<span class="rating">
+        <input id="rating5" type="radio" name="{{ var1 }}" value="r5" onclick="showSomething(5);">
+        <label for="rating5"></label>
+        <input id="rating4" type="radio" name="{{ var1 }}" onclick="showSomething(4);">
+        <label for="rating4"></label>
+        <input id="rating3" type="radio" name="{{ var1 }}" onclick="showSomething(3);">
+        <label for="rating3"></label>
+        <input id="rating2" type="radio" name="{{ var1 }}" onclick="showSomething(2);">
+        <label for="rating2"></label>
+        <input id="rating1" type="radio" name="{{ var1 }}" onclick="showSomething(1);">
+        <label for="rating1"></label>
+        </span>
+</ul>
+<!-- </form> -->
+

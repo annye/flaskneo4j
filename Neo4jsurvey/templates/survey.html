@@ -1,0 +1,362 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+  {% if session.username %}
+    <h4>Please answer all questions</h4>
+    <div class="wrapper">
+    <form action="{{ url_for('add_survey') }}" method="post">
+        <section class="columns">
+	 <div class="column">
+          <div class="bootstrap-iso">
+         <div class="container-fluid">
+          <div class="row">
+              <div class="form-group ">
+                  <label class="control-label ">
+                   I was born
+                  </label>
+                  <div class="">
+                   <div class="radio">
+                    <label class="radio">
+                     <input name="gender" type="radio" value="Male"/>
+                     Male
+                    </label>
+                   </div>
+                   <div class="radio">
+                    <label class="radio">
+                     <input name="gender" type="radio" value="Female"/>
+                     Female
+                    </label>
+                   </div>
+                  </div>
+                 </div>
+                 <div class="form-group ">
+                  <label class="control-label ">
+                   I am
+                  </label>
+                  <div class="">
+                   <div class="radio">
+                    <label class="radio">
+                     <input name="sexuality" type="radio" value="Heterosexual"/>
+                     Heterosexual
+                    </label>
+                   </div>
+                   <div class="radio">
+                    <label class="radio">
+                     <input name="sexuality" type="radio" value="Homosexual"/>
+                     Homosexual
+                    </label>
+                   </div>
+                   <div class="radio">
+                    <label class="radio">
+                     <input name="sexuality" type="radio" value="Bisexual"/>
+                     Bisexual
+                    </label>
+                   </div>
+                   <div class="radio">
+                    <label class="radio">
+                     <input name="radio1" type="radio" value="Transexual"/>
+                     Transexual
+                    </label>
+                   </div>
+                   <div class="radio">
+                    <label class="radio">
+                     <input name="sexuality" type="radio" value="Pansexual"/>
+                     Pansexual
+                    </label>
+                   </div>
+                  </div>
+                 </div>
+
+
+             <div class="form-group ">
+              <label class="control-label " for="select">
+               My ethnicity
+              </label>
+              <select class="select form-control" id="select" name="ethnicity">
+               <option value="Caucasian or White">
+                Caucasian or White
+               </option>
+               <option value="Black or African">
+                Black or African
+               </option>
+               <option value="Asian">
+                Asian
+               </option>
+               <option value="Hispanic or Latin">
+                Hispanic or Latin
+               </option>
+               <option value="Multiracial">
+                Multiracial
+               </option>
+               <option value="Indian">
+                Indian
+               </option>
+              </select>
+             </div>
+              
+             <div class="form-group ">
+              <label class="control-label " for="select1">
+               My occupation
+              </label>
+              <select class="select form-control" id="select1" name="occupation">
+               <option value="Part-time student">
+                Part-time student
+               </option>
+               <option value="Full-time student">
+                Full-time student
+               </option>
+               <option value="Work and study">
+                Work and study
+               </option>
+               <option value="Full-time work">
+                Full-time work
+               </option>
+               <option value="Unemployed">
+                Unemployed
+               </option>
+              </select>
+             
+
+             <div class="form-group ">
+              <label class="control-label " for="select2">
+               Marital status
+              </label>
+              <select class="select form-control" id="select2" name="marital_status">
+               <option value="Single">
+                Single
+               </option>
+               <option value="Living with a partner">
+                Living with a partner
+               </option>
+               <option value="Married">
+                Married
+               </option>
+               <option value="Widowed">
+                Widowed
+               </option>
+              </select>
+             </div>
+             <div class="form-group ">
+              <label class="control-label " for="select3">
+               What was the last grade you completed in school?
+              </label>
+              <select class="select form-control" id="select3" name="education">
+               <option value="No Schooling Completed">
+                No Schooling Completed
+               </option>
+               <option value="Less than High School">
+                Less than High School
+               </option>
+               <option value="Some college">
+                Some college
+               </option>
+               <option value="Bachelor&rsquo;s Degree">
+                Bachelor&rsquo;s Degree
+               </option>
+               <option value="Master's Degree">
+                Master's Degree
+               </option>
+               <option value="Doctorate Degree">
+                Doctorate Degree
+               </option>
+              </select>
+           
+             what is your age group?
+              </label>
+              <select class="select form-control" id="age" name="age">
+               <option value="15-20">
+                15-20
+               </option>
+               <option value="20-25">
+                20-25
+               </option>
+               <option value="25-30">
+                25-30
+               </option>
+               <option value="30-35">
+                30-35
+               </option>
+               <option value="35-40">
+                35-40
+               </option>
+               <option value="40-45">
+                40-45
+               </option>
+               <option value="45-50">
+                45-50
+               </option>
+               <option value="50-55">
+                50-55
+               </option>
+               <option value="60 +">
+                60 +
+               </option>
+              </select>
+          
+           
+            <div class="form-group ">
+              <label class="control-label " for="religion">
+               What is your religion?
+              </label>
+              <select class="select form-control" id="religion" name="religion">
+               <option value="Roman Catholic">
+                Roman Catholic
+               </option>
+               <option value="Christian">
+                Christian
+               </option>
+               <option value="Buddhist">
+                Buddhist
+               </option>
+               <option value="Jewish">
+                Jewish
+               </option>
+               <option value="Atheist/Agnostic">
+                Atheist/Agnostic
+               </option>
+               <option value="Muslim">
+                Muslim
+               </option>
+               <option value="Other religion">
+                Other religion
+               </option>
+              </select>
+             </div>
+            </div>
+            </div>
+          </section>
+           
+            <div class="column">
+
+              <label class="control-label ">
+               which vehicle type do you have? Select all that apply:
+              </label>
+              <div class=" ">
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="vehicle" type="checkbox" value="I have a bike"/>
+                 I have a bike
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="vehicle" type="checkbox" value="I have a car"/>
+                 I have a car
+                </label>
+               </div>
+              </div>
+        
+          <div class="form-group ">
+              <label class="control-label ">
+               Indicate activities/interest which you enjoy on a regular basics:
+              </label>
+              <div class=" ">
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Do-it-Yourself/workshop"/>
+                 Do-it-Yourself/workshop
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Self improvement"/>
+                 Self improvement
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Watching sports on TV"/>
+                 Watching sports on TV
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Charities/volunteer work"/>
+                 Charities/volunteer work
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Physical fitness/exercise"/>
+                 Physical fitness/exercise
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Gourmet/fine food"/>
+                 Gourmet/fine food
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Fashion clothing"/>
+                 Fashion clothing
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Money making opportunities"/>
+                 Money making opportunities
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Book reading"/>
+                 Book reading
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Festivals and concerts"/>
+                 Festivals and concerts
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Health foods/vitamins"/>
+                 Health foods/vitamins
+                </label>
+               </div>
+               <div class="checkbox">
+                <label class="checkbox">
+                 <input name="recreation" type="checkbox" value="Foreign travel"/>
+                 Foreign travel
+                </label>
+               </div>
+              </div>
+             </div>
+          
+        </section>	
+          
+          <footer>
+            <div class="form-group">
+              <div>
+               <button class="btn btn-primary " name="submit" type="submit">
+                Submit
+               </button>
+              </div>
+             </div>
+            </form>
+           </div>
+          </div>
+         </div>
+        </div>
+      </div>
+          </footer>
+        
+        </div>
+
+
+
+
+
+
+  {% endif %}
+
+<br>
+
+
+
+
+{% endblock %}

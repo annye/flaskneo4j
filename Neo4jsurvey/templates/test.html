@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+	<form action="{{ url_for('add_post') }}" method="post">
+     
+           
+            <dt>Your gender:</dt>
+            <dd><input type="text" name="gender"></dd>
+          
+            
+        </dl>
+        <input type="submit" value="Save">
+        
+          
+  </form>
+  
+{% endblock %}
